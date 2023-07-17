@@ -6,9 +6,8 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v3
-      - name: Go to the directory
-        run: cd my-react-app
       - name: Install-Dependencies
         run: npm install
+        working-directory: ./my-react-app
       - name: Test-code
         run: npm test    
