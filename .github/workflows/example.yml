@@ -32,7 +32,6 @@ jobs:
         with:
           name: build-files
           path: build
-        working-directory: ./my-react-app  
   deploy:
       needs: build
       runs-on: ubuntu-latest
