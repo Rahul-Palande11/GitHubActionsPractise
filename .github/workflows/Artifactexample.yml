@@ -31,7 +31,11 @@ jobs:
         working-directory: ./my-react-app 
       - name: Publish JS filename
         id: publish
-        run: find C:\Rahul-Palande\GitHub_Actions_Practise\my-react-app\build\static\js*.js -type f -execdir echo '::set-output name=script-file::{}' ';'   
+        run: |
+          cd my-react-app/build/static/js
+          script_file=$(find . -type f -name "*.js")
+          echo "::set-output name=script-file::$script_file"
+        shell: bash   
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
