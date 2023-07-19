@@ -31,7 +31,7 @@ jobs:
         working-directory: ./my-react-app 
       - name: Publish JS filename
         id: publish
-        run: find build/static/js/*.js -type f -execdir echo '::set-output name=script-file::{}' ';'   
+        run: find ../my-react-app/build/static/js/*.js -type f -execdir echo '::set-output name=script-file::{}' ';'   
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
