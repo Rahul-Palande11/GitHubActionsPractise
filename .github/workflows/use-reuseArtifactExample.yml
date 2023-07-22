@@ -43,7 +43,7 @@ jobs:
           path: ./my-react-app/build
   deploy:
       needs: build
-      uses: Rahul-Palande11/GitHubActionsPractise/.github/workflows/reusableWorkflows.yml@main
+      uses: Rahul-Palande11/GitHubActionsPractise/.github/workflows/ReuseArtifactExample.yml@main
       with:
         artifact-name: build-files
       
