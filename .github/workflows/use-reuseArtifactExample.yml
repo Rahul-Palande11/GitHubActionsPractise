@@ -46,5 +46,11 @@ jobs:
       uses: Rahul-Palande11/GitHubActionsPractise/.github/workflows/ReuseArtifactExample.yml@main
       with:
         artifact-name: build-files
+  print-deploy-output:
+      needs: deploy
+      runs-on: ubuntu-latest
+      steps:
+        - name: Print deploy output
+          run: ${{ needs.deploy.outputs.result }}
       
       
