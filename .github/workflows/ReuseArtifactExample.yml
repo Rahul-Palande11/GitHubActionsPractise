@@ -35,4 +35,4 @@ jobs:
         #run: echo "::set-output name=step-result::success"  
         run: |
           echo "{step-result}={success}" >> $GITHUB_OUTPUT   
-          echo "The result is ${{ env.set-result }}"
+          echo "The result is ${{ env.set-result}}"
