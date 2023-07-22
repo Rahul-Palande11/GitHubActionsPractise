@@ -1,0 +1,23 @@
+name: Reuse artifact deploy
+on:
+  workflow_call:
+    inputs:
+      artifact-name:
+        description: The name of the deployable artifact
+        required: false
+        default: build
+        type: string
+jobs:
+  deploy:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Download artifacts
+          uses: actions/download-artifact@v3
+          with:
+            name: ${{ inputs.artifact-name }} # build-files instead of hardcoded it should be dynamic as there can be different artifact files with different names
+        - name: Output contents
+          run: ls
+        - name: Output filename
+          run: ${{ needs.build.outputs.script-file }}  
+        - name: Deploy
+          run: echo "Deploying..."       
