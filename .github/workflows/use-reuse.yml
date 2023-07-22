@@ -28,6 +28,6 @@ jobs:
         run: echo "Deploying..."
   deploy:
     needs: build
-    uses: ./.githubaction/workflows/reusableWorkflows
+    uses: ./.github/workflows/reusableWorkflows
 
       
