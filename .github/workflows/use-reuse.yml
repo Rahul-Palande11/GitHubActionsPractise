@@ -25,6 +25,6 @@ jobs:
         run: npm run build
         working-directory: ./my-react-app 
       - name: Deploy code
-        uses: ./reusableWorkflows
+        uses: ./.githubaction/workflows/reusableWorkflows
 
       
