@@ -28,7 +28,6 @@ jobs:
         run: echo "Deploying..."
   deploy:
     needs: build
-    uses: |
-      cd workflows/reusableWorkflows.yml
+    uses: Rahul-Palande11/GitHubActionsPractise/.github/workflows/reusableWorkflows.yml@main
 
       
